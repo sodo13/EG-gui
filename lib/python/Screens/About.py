@@ -50,7 +50,7 @@ class About(Screen):
         AboutText += _('Kernel:\t%s') % about.getKernelVersionString() + '\n'
         AboutText += _('Oe-Core:\t%s') % about.getEnigmaVersionString() + '\n'
         AboutText += _('Image Type:\t%s\n') % getImageType().title()
-        AboutText += _('Coder: SODO') + '\n'
+        AboutText += _('Coder:\tSODO') + '\n'
         string = getDriverDate()
         year = string[0:4]
         month = string[4:6]
