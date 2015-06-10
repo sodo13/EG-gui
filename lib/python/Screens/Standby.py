@@ -4,7 +4,7 @@ from Components.config import config
 from Components.AVSwitch import AVSwitch
 from Components.SystemInfo import SystemInfo
 from GlobalActions import globalActionMap
-from enigma import eDVBVolumecontrol, eTimer, eDVBLocalTimeHandler, eServiceReference, pNavigation
+from enigma import eDVBVolumecontrol, eTimer, eDVBLocalTimeHandler, eServiceReference, 
 from boxbranding import getMachineBrand, getMachineName, getMachineProcModel
 from Tools import Notifications
 from time import localtime, time
@@ -14,7 +14,7 @@ from gettext import dgettext
 from time import time, localtime
 import PowerTimer
 import RecordTimer
-import Components.RecordingConfig
+#import Components.RecordingConfig
 inStandby = None
 
 def setLCDModeMinitTV(value):
@@ -203,7 +203,7 @@ class TryQuitMainloop(MessageBox):
     def __init__(self, session, retvalue = 1, timeout = -1, default_yes = True):
         self.retval = retvalue
         self.ptsmainloopvalue = retvalue
-        recordings = session.nav.getRecordings(False, Components.RecordingConfig.recType(config.recording.warn_box_restart_rec_types.getValue()))
+        recordings = session.nav.getRecordings
         jobs = len(job_manager.getPendingJobs())
         inTimeshift = Screens.InfoBar.InfoBar and Screens.InfoBar.InfoBar.instance and Screens.InfoBar.InfoBar.ptsGetTimeshiftStatus(Screens.InfoBar.InfoBar.instance)
         self.connected = False
@@ -246,7 +246,7 @@ class TryQuitMainloop(MessageBox):
         if event == iRecordableService.evEnd and config.timeshift.isRecording.value:
             return
         if event == iRecordableService.evEnd:
-            recordings = self.session.nav.getRecordings(False, Components.RecordingConfig.recType(config.recording.warn_box_restart_rec_types.getValue()))
+            recordings = self.session.nav.getRecordings
             if not recordings:
                 rec_time = self.session.nav.RecordTimer.getNextRecordingTime()
                 if rec_time > 0 and rec_time - time() < 360:
