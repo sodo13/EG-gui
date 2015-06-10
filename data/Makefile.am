@@ -15,6 +15,8 @@ dist_pkgdata_DATA = \
 	freesat.t2 \
 	timezone.xml \
 	unicable.xml \
+	skin.xml \
+	skin_default.xml \
 	hd-testcard.mvi \
 	distro-logo.png
 
